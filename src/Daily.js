@@ -1,41 +1,29 @@
 import React from "react";
 import "./index.css";
+import WeatherIcon from "./WeatherIcon";
 
-export default function Daily() {
-  let weatherData = {
-    day: "SAT",
-    temperatureMax: 19,
-    temperatureMin: 0,
-    imgUrl: "http://openweathermap.org/img/wn/10d@2x.png"
-  };
-
+export default function Daily(props) {
+  function maxTemperature() {
+    let maxTemp = Math.round(props.data.temp.max);
+    return `${maxTemp}°`;
+  }
+  function minTemperature() {
+    let minTemp = Math.round(props.data.temp.min);
+    return `${minTemp}°`;
+  }
+  function day() {
+    let date = new Date(props.data.dt * 1000);
+    let day = date.getDay();
+    let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+    return days[day];
+  }
   return (
-    <div
-      className="container row d-flex justify-content-between"
-      style={{ width: `34rem` }}
-    >
-      <h4>DAILY</h4>
-      <div className="weather-forecast" id="forecast-daily">
-        <div className="row">
-          <div className="col-2">
-            <div className="card-body-daily d-flex justify-content-between">
-              <h5 className="card-title-daily">{weatherData.day}</h5>
-              <h5 className="temperatures-daily">
-                <span className="daily-temperature-max">
-                  {weatherData.temperatureMax}°
-                </span>{" "}
-                <span className="daily-temperature-min">
-                  {weatherData.temperatureMin}°
-                </span>
-              </h5>
-              <img
-                src={weatherData.imgUrl}
-                className="img-weather-small"
-                alt="cloudy"
-              />
-            </div>
-          </div>
-        </div>
+    <div>
+      <div className="img-weather-small">{day()}</div>
+      <WeatherIcon code={props.data.weather[0].icon} size={24} />
+      <div className="card-title-daily">
+        <span className="temperatures-daily">{maxTemperature()} </span>
+        <span className="daily-temperature-min">{minTemperature()}</span>
       </div>
     </div>
   );

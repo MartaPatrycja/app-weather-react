@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./index.css";
+import DateFormat from "./DateFormat";
+import WeatherIcon from "./WeatherIcon";
+import Daily from "./Daily";
 
 export default function SearchEngine(props) {
     const [city, setCity] = useState("");
@@ -18,7 +21,6 @@ export default function SearchEngine(props) {
         humidity: response.data.main.humidity,
         hour: response.data.hour,
         year: response.data.year,
-        icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
         description: response.data.weather[0].description
       });
     }
@@ -45,7 +47,7 @@ export default function SearchEngine(props) {
     let form = (
         <div className="formular" id="serach-form">
           <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="🔎 Search" onChange={updateCity} />
+            <input type="text" placeholder="🔎 Search" onChange={updateCity} id="form-city-text"/>
             <input type="submit" value="Change city" className="form-city-button"/>
             <input type="button" value="Current city" className="current-city-button"
                       id="current-city-button"/>
@@ -57,10 +59,10 @@ export default function SearchEngine(props) {
         return (
     <div>
      <div className="col-9">
-        <h2 id="year-top">{weather.year}</h2>
-      </div>
-      <div className="col-3">
-        <h2 id="hour-top">{weather.hour}</h2>
+        <ul>
+            <li id="year-top"><Date Format day={props.info.date} /></li>
+            <li id="hour-top"><Date Format hour={props.info.hour} /></li>
+     </ul>
       </div>
       <div>
         <div className="row d-flex justify-content-between">
@@ -83,12 +85,7 @@ export default function SearchEngine(props) {
           <div className="padding-icon d-flex justify-content-between">
             <ul className="changing-weather" style={{ width: `31rem` }}>
               <li>
-                <img
-                  src={weather.icon}
-                  className="img-weather-big"
-                  alt="sunny"
-                  id="icon"
-                />
+              <WeatherIcon code={props.info.icon} size={64} />
               </li>
               <li id="temperature">{Math.round(weather.temperature)}</li>
               <li id="celsius">°C</li>
@@ -113,9 +110,62 @@ export default function SearchEngine(props) {
         </div>
       </div>
         );
-        
+
      } else {
-        return form;
+        return alert(`Loading data...`);
       }
-    }
+      
+      if (loaded) {
+        return (
+          <div className="card-body-hourly">
+            <div className="row">
+              {forecast.map(function (hourlyForecast, index) {
+                if (index < 6) {
+                  return (
+                    <div className="card-title-hourly" key={index}>
+                      <Hourly data={hourlyForecast} />
+                    </div>
+                  );
+                }
+              })}
+            </div>
+          </div>
+        );
+      } else {
+        let apiKey = `5804e20be54f5001e6423f04ed96492c`;
+        let longitude = props.coordinates.lon;
+        let latitude = props.coordinates.lat;
+        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    
+        axios.get(apiUrl).then(handleResponse);
+        return null;
+      }
+    
+
+      if (loaded) {
+        return (
+          <div className="card-body-daily">
+            <div className="row">
+              {forecast.map(function (dailyForecast, index) {
+                if (index < 6) {
+                  return (
+                    <div className="card-title-daily" key={index}>
+                      <Daily data={dailyForecast} />
+                    </div>
+                  );
+                }
+              })}
+            </div>
+          </div>
+        );
+      } else {
+        let apiKey = `5804e20be54f5001e6423f04ed96492c`;
+        let longitude = props.coordinates.lon;
+        let latitude = props.coordinates.lat;
+        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    
+        axios.get(apiUrl).then(handleResponse);
+        return null;
+      }
+    
       

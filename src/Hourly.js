@@ -1,39 +1,41 @@
 import React from "react";
 import "./index.css";
+import WeatherIcon from "./WeatherIcon";
 
-export default function Hourly() {
-  let weatherData = {
-    hour: "12:12",
-    temperature: 19,
-    imgUrl: "http://openweathermap.org/img/wn/10d@2x.png"
-  };
+export default function Hourly(props) {
+  function maxTemperature() {
+    let maxTemp = Math.round(props.data.temp.max);
+    return `${maxTemp}°`;
+  }
+  
+  function hour(timestamp) {
+    let now = new Date(timestamp * 1000);
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    
+    if (hours < 10) {
+        hours = `0${hours}`;
+      }
+      if (minutes < 10) {
+        minutes = `0${minutes}`;
+      }
+    
+      return `${hours}:${minutes}`;
+  
+    }
 
   return (
-    <div
-      className="container row d-flex justify-content-between"
-      style={{ width: `34rem` }}
-    >
-      <h4>HOURLY</h4>
-
-      <div className="weather-forecast" id="forecast-hourly">
-        <div className="row">
-          <div className="col-2">
-            <div className="card-body-hourly d-flex justify-content-between">
-              <h5 className="card-title-hourly">{weatherData.hour}</h5>
-              <h5 className="temperatures-hourly">
-                <span className="hourly-temperature">
-                  {weatherData.temperature}°
-                </span>
-              </h5>
-              <img
-                src={weatherData.imgUrl}
-                className="img-weather-small"
-                alt="sunny"
-              />
-            </div>
-          </div>
-        </div>
+    <div>
+      <div className="img-weather-small">{hour()}</div>
+      <WeatherIcon code={props.data.weather[0].icon} size={24} />
+      <div className="card-title-hourly">
+        <span className="temperatures-hourly">{maxTemperature()} </span>
       </div>
     </div>
   );
 }
+
+
+
+
+
