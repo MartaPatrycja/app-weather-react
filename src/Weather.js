@@ -4,6 +4,7 @@ import "./index.css";
 import DateFormat from "./DateFormat";
 import WeatherIcon from "./WeatherIcon";
 import Daily from "./Daily";
+import Hourly from "./Hourly";
 
 export default function SearchEngine(props) {
     const [city, setCity] = useState("");
@@ -11,6 +12,7 @@ export default function SearchEngine(props) {
     const [weather, setWeather] = useState({});
     const [year, setYear] = useState ({});
     const [hour, setHour] = useState ({});
+    const [additional, setAdditional] = useState ("");
 }
   
     function displayWeather(response) {
@@ -19,8 +21,7 @@ export default function SearchEngine(props) {
         temperature: response.data.main.temp,
         wind: response.data.wind.speed,
         humidity: response.data.main.humidity,
-        hour: response.data.hour,
-        year: response.data.year,
+        pressure: response.data.main.pressure,
         description: response.data.weather[0].description
       });
     }
@@ -32,17 +33,8 @@ export default function SearchEngine(props) {
       axios.get(url).then(displayWeather);
     }
   
-    function updateCity(event) {
-      setCity(event.target.value);
-    }
+    
 
-    function updateYear(event) {
-        setYear(event.target.value);
-    }
-  
-    function updateHour(event) {
-        setHour(event.target.value);
-    }
 
     let form  = (
         <div className="formular" id="serach-form">
@@ -54,25 +46,34 @@ export default function SearchEngine(props) {
           </form>
         </div>
       );
-    
-        return (
+
+    function showData(response) {
+       setYear(response.target.value);
+       setHour(response.target.value);
+    return (
     <div>
      <div className="col-9">
         <ul>
-            <li id="year-top"><Date Format day={props.info.date} /></li>
+            <li id="year-top"><Date Format year={props.info.date} /></li>
             <li id="hour-top"><Date Format hour={props.info.hour} /></li>
      </ul>
       </div>
+      );
+      
+      
+      function updateCity(response) {
+      setCity(response.target.value)}
+               return (
       <div>
         <div className="row d-flex justify-content-between">
           <div className="col-9">
             <h1 className="card-city" id="city">
-              {weather.city}
+              {props.city}
             </h1>
           </div>
           <div className="col-3">
             <h3 className="card-country" id="country">
-              {weather.country}
+              {props.country}
             </h3>
           </div>
         </div>
@@ -86,34 +87,33 @@ export default function SearchEngine(props) {
               <li>
               <WeatherIcon code={props.info.icon} size={64} />
               </li>
-              <li id="temperature">{Math.round(weather.temperature)}</li>
+              <li id="temperature">{Math.round(props.temperature)}</li>
               <li id="celsius">°C</li>
-              <li id="weather-change">{weather.description}</li>
+              <li id="weather-change">{props.description}</li>
             </ul>
           </div>
 
           <ul className="additional-parameters">
             <li>
-              Wind: {weather.wind}
+              Wind: {props.info.wind}
               <span id="wind"></span> km/h
             </li>
             <li>
-              Humidity: {weather.humidity}
+              Humidity: {props.info.humidity}
               <span id="humidity"></span>%
             </li>
             <li>
-              Pressure: {weather.pressure}
+              Pressure: {props.info.pressure}
               <span id="pressure"></span> hPa
             </li>
           </ul>
         </div>
       </div>
-        );
-
-     } else {
-        return alert(`Loading data...`);
+      )
       }
 
+function additional (response) {
+    setAdditional(response.target.value);
       if (loaded) {
         return (
             <div>
@@ -156,5 +156,5 @@ export default function SearchEngine(props) {
         axios.get(apiUrl).then(handleResponse);
         return null;
       }
-    
+    }
       
