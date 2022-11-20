@@ -44,7 +44,7 @@ export default function SearchEngine(props) {
         setHour(event.target.value);
     }
 
-    let form = (
+    let form  = (
         <div className="formular" id="serach-form">
           <form onSubmit={handleSubmit}>
             <input type="text" placeholder="🔎 Search" onChange={updateCity} id="form-city-text"/>
@@ -55,7 +55,6 @@ export default function SearchEngine(props) {
         </div>
       );
     
-      if (loaded) {
         return (
     <div>
      <div className="col-9">
@@ -114,10 +113,11 @@ export default function SearchEngine(props) {
      } else {
         return alert(`Loading data...`);
       }
-      
+
       if (loaded) {
         return (
-          <div className="card-body-hourly">
+            <div>
+            <div className="card-body-hourly">
             <div className="row">
               {forecast.map(function (hourlyForecast, index) {
                 if (index < 6) {
@@ -130,20 +130,7 @@ export default function SearchEngine(props) {
               })}
             </div>
           </div>
-        );
-      } else {
-        let apiKey = `5804e20be54f5001e6423f04ed96492c`;
-        let longitude = props.coordinates.lon;
-        let latitude = props.coordinates.lat;
-        let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-    
-        axios.get(apiUrl).then(handleResponse);
-        return null;
-      }
-    
 
-      if (loaded) {
-        return (
           <div className="card-body-daily">
             <div className="row">
               {forecast.map(function (dailyForecast, index) {
@@ -152,10 +139,12 @@ export default function SearchEngine(props) {
                     <div className="card-title-daily" key={index}>
                       <Daily data={dailyForecast} />
                     </div>
+                    
                   );
                 }
               })}
             </div>
+          </div>
           </div>
         );
       } else {
