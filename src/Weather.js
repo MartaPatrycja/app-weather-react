@@ -53,8 +53,8 @@ export default function SearchEngine(props) {
         </div>
       );
     
-
-  return (
+      if (loaded) {
+        return (
     <div>
      <div className="col-9">
         <h2 id="year-top">{weather.year}</h2>
@@ -76,6 +76,9 @@ export default function SearchEngine(props) {
           </div>
         </div>
 
+        <div>
+        {form}
+        </div>
        
           <div className="padding-icon d-flex justify-content-between">
             <ul className="changing-weather" style={{ width: `31rem` }}>
@@ -109,5 +112,10 @@ export default function SearchEngine(props) {
           </ul>
         </div>
       </div>
-    );
+        );
+        
+     } else {
+        return form;
+      }
+    }
       
