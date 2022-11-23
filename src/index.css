@@ -5,11 +5,19 @@
 }
 
 h4 {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
   color: var(--accent-yellow);
   background-color: var(--blue-color);
   padding: 5px 0;
   margin: 0 auto;
+}
+
+.loading {
+font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ color: var(--accent-yellow);
+ font-size: 30px;
+ text-align: center;
 }
 
 #year-top,

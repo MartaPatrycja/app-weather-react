@@ -4,6 +4,7 @@ import WeatherInfo from "./WeatherInfo";
 import "./index.css";
 import WeatherForecastHourly from "./WeatherForecastHourly";
 import WeatherForecastDaily from "./WeatherForecastDaily";
+import { InfinitySpin } from 'react-loader-spinner';
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -53,7 +54,15 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    search();
-    return <h1>Loading...</h1>;
+    return <div className="d-inline-flex p-2">
+    <p className="loading">Loading...</p>
+    <InfinitySpin
+    width="400"
+    color="#1ab2a8"
+    ariaLabel="loading"
+    wrapperStyle
+    wrapperClass
+  />
+  </div>
   }
 }
