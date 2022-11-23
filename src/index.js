@@ -2,15 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Weather from "./Weather";
-import Hourly from "./Hourly";
-import Daily from "./Daily";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
      <Weather />
-    <Hourly />
-    <Daily />
   </React.StrictMode>
 );
 
