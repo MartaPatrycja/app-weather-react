@@ -27,7 +27,7 @@ export default function WeatherInfo(props) {
           <ul className="mt-3">
             <li>Humidity: {props.info.humidity}%</li>
             <li>Wind: {Math.round(props.info.wind)} mph</li>
-            <li>Pressure: {Math.round(props.info.main.grnd_level)} hPa</li>
+            <li>Pressure: {Math.round(props.info.grnd_level)} hPa</li>
           </ul>
         </div>
       </div>
