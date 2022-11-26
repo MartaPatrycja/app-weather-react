@@ -19,7 +19,7 @@ export default function Daily(props) {
   }
   return (
     <div>
-      <div className="img-weather-small row d-flex justify-content-between">{day()}</div>
+      <div className="card-body-daily row d-flex justify-content-between">{day()}</div>
       <WeatherIcon code={props.data.weather[0].icon} size={50} />
       <div className="card-title-daily">
         <span className="temperatures-daily">{maxTemperature()} </span>

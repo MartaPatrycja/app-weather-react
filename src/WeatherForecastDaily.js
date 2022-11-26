@@ -27,7 +27,7 @@ export default function WeatherForecast(props) {
 
   if (loaded) {
     return (
-      <div className="mt-2 row d-flex justify-content-between">
+      <div className="row d-flex justify-content-between">
         <div className="row text-capitalize">
           {forecast.map(function (dailyForecast, index) {
             if (index < 6) {

@@ -7,10 +7,17 @@ body {
   display: flex;
   margin: 0 auto;
   max-width: 600px;
+  text-align: center;
 }
 
 li {
   list-style: none;
+}
+
+.github-link {
+  text-align: center;
+  font-size: small;
+  padding-top: 20px;
 }
 
 h4 {
@@ -100,25 +107,9 @@ ul.additional-parameters {
   margin: 0 auto;
 }
 
-.card-body-hourly {
-  background-color: #76d1cb;
-  padding: 10px auto;
-  margin: 10px auto;
-}
-
-.card-title-hourly {
-  text-align: center;
-  color: white;
-  padding-top: 10px;
-}
-
-.temperatures-hourly {
-  text-align: center;
-  color: var(--blue-color);
-}
-
 .card-body-daily {
-  background-color: #c9eeeb;
+  text-align: center;
+  background-color: turquoise;
   padding: 10px auto;
   margin: 10px auto;
 }
@@ -148,7 +139,7 @@ ul.additional-parameters {
 }
 
 .formular {
-  
+  padding-top: 20px;
   border: none;
   margin: 0 auto;
   display: block;

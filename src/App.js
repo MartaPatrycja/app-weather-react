@@ -7,7 +7,7 @@ export default function App() {
       <div className="container">
         <Weather defaultCity="Łódź" />
         <footer>
-          <div>
+          <div className="github-link">
             This project was coded by MartaPatrycja and is{" "}
             <a
               href="https://github.com/MartaPatrycja/app-weather-react"
