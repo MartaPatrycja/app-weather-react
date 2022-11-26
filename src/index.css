@@ -43,6 +43,7 @@ h4 {
   text-align: center;
   font-size: 56px;
   color: var(--accent-yellow);
+  padding: 20px 0;
 }
 
 #country {
@@ -62,12 +63,6 @@ h4 {
 .card-main {
   text-align: center;
   background: var(--turqoise-color);
-}
-
-.card-city,
-.card-country {
-  font-size: 30px;
-  color: var(--blue-color);
 }
 
 ul.changing-weather {
@@ -143,19 +138,12 @@ ul.additional-parameters {
   opacity: 0.5;
 }
 
-.img-weather-big {
-  display: block;
-  margin: 0 auto;
-  width: 120%;
-}
-
 .padding-icon {
   padding: 20px 0;
 }
 
 .img-weather-small {
   display: block;
-  width: 50px;
   margin: 0 auto;
 }
 
@@ -168,7 +156,7 @@ ul.additional-parameters {
 
 #form-city-text {
   max-width: 600px;
-  display: block;
+  display: inline-block;
   margin: 0 auto;
   border: 3px solid var(--blue-color);
   font-size: 20px;
