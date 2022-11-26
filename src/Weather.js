@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import "./index.css";
-import WeatherForecastHourly from "./WeatherForecastHourly";
 import WeatherForecastDaily from "./WeatherForecastDaily";
 import { InfinitySpin } from "react-loader-spinner";
 
@@ -42,7 +41,7 @@ export default function Weather(props) {
 
   if (weather.loaded) {
     return (
-      <div className="formular" id="serach-form">
+      <div className="formular row d-flex justify-content-between">
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -59,11 +58,9 @@ export default function Weather(props) {
             type="button"
             value="Current city"
             className="current-city-button"
-            id="current-city-button"
           />
         </form>
         <WeatherInfo info={weather} />
-        <WeatherForecastHourly coordinates={weather.coordinates} />
         <WeatherForecastDaily coordinates={weather.coordinates} />
       </div>
     );

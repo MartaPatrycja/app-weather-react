@@ -3,37 +3,46 @@
   --blue-color: #006ec4;
   --accent-yellow: #ffbc0e;
 }
+body {
+  display: flex;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+li {
+  list-style: none;
+}
 
 h4 {
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
   color: var(--accent-yellow);
   background-color: var(--blue-color);
-  padding: 5px 0;
+  padding: 15px 10px;
   margin: 0 auto;
+  max-width: 600px;
 }
 
 .loading {
-font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
- color: var(--accent-yellow);
  font-size: 30px;
  text-align: center;
 }
 
-#year-top,
 #hour-top {
-  margin-top: 30px;
+  max-width: 600px;
   text-align: center;
-  color: var(--blue-color);
-  padding: 30px 20px;
+  color: turquoise;
+  padding: 15px 10px;
   font-size: 20px;
-  border: 3px solid var(--turqoise-color);
+  border: 3px solid turquoise;
+  display:block;
+  margin: 0 auto;
+  font-weight: bolder;
 }
 
 #city {
   text-align: center;
   font-size: 56px;
-  color: var(--turqoise-color);
+  color: var(--accent-yellow);
 }
 
 #country {
@@ -43,24 +52,11 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
 }
 
 #temperature {
+  color: var(--blue-color);
   display: block;
   margin: 0 auto;
-  padding-top: 40px;
-  padding-left: 20px;
   font-size: 96px;
   text-align: center;
-}
-
-#celsius {
-  padding-top: 20px;
-  font-size: 36px;
-  text-align: left;
-}
-
-#weather-change {
-  padding-top: 40px;
-  padding-left: 40px;
-  text-transform: capitalize;
 }
 
 .card-main {
@@ -99,6 +95,9 @@ ul.additional-parameters {
   font-weight: 500;
   column-width: auto;
   column-count: 3;
+  display: block;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .weather-forecast {
@@ -137,7 +136,7 @@ ul.additional-parameters {
 
 .temperatures-daily {
   text-align: center;
-  color: #1ab2a8;
+  color: turquoise;
 }
 
 .daily-temperature-min {
@@ -161,28 +160,31 @@ ul.additional-parameters {
 }
 
 .formular {
+  
   border: none;
+  margin: 0 auto;
+  display: block;
 }
 
 #form-city-text {
+  max-width: 600px;
   display: block;
   margin: 0 auto;
   border: 3px solid var(--blue-color);
   font-size: 20px;
   text-align: center;
-  padding: 15px 0;
-  margin: 10px 0;
+  padding: 5px 0;
 }
 
 .form-city-button {
-  display: block;
+  max-width: 600px;
+  display: inline-block;
   margin: 0 auto;
   color: white;
   background: var(--blue-color);
   border: 3px solid var(--blue-color);
   transition: all 200ms ease;
-  padding: 15px;
-  margin: 10px;
+  padding: 5px;
   text-align: center;
   font-size: 20px;
 }
@@ -195,13 +197,13 @@ ul.additional-parameters {
 }
 
 .current-city-button {
-  display: block;
+  max-width: 600px;
+  display: inline-block;
   margin: 0 auto;
-  background-color: var(--turqoise-color);
-  border: 3px solid var(--turqoise-color);
+  background-color: turquoise;
+  border: 3px solid turquoise;
   color: white;
-  padding: 15px;
-  margin: 10px;
+  padding: 5px;
   text-align: center;
   font-size: 20px;
 }
@@ -209,8 +211,8 @@ ul.additional-parameters {
 .current-city-button:hover {
   background-color: white;
   cursor: pointer;
-  color: var(--turqoise-color);
-  border: 3px solid var(--turqoise-color);
+  color: turquoise;
+  border: 3px solid turquoise;
   transition: all 200ms ease;
 }
 
@@ -220,10 +222,8 @@ ul.additional-parameters {
     margin: 0 auto;
   }
 
-  #year-top,
   #hour-top {
     text-align: center;
-    padding: 15px 10px;
     font-size: 15px;
   }
 
