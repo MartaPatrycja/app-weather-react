@@ -14,15 +14,15 @@ export default function Daily(props) {
   function day() {
     let date = new Date(props.data.dt * 1000);
     let day = date.getDay();
-    let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+    let days = ["sun", "mon", "tues", "wed", "thurs", "fri", "sat"];
     return days[day];
   }
   return (
     <div>
-      <div className="card-body-daily row d-flex justify-content-between">{day()}</div>
+      <div className="card-title-daily row d-flex justify-content-between">{day()}</div>
       <WeatherIcon code={props.data.weather[0].icon} size={50} />
       <div className="card-title-daily">
-        <span className="temperatures-daily">{maxTemperature()} </span>
+        <span className="temperatures-daily">{maxTemperature()} | </span>
         <span className="daily-temperature-min">{minTemperature()}</span>
       </div>
     </div>
