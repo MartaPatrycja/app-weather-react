@@ -10,7 +10,7 @@ export default function WeatherInfo(props) {
         <li className="p-2" id="hour-top">
           <DateFormat day={props.info.date} />
         </li> 
-        <li><h4 className="p-2 text-capitalize">{props.info.description}</h4></li>
+        <li className="p-2 text-capitalize" id="description">{props.info.description}</li>
       </ul> 
 
          <ul className="d-flex">
