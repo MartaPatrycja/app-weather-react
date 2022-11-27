@@ -29,7 +29,7 @@ export default function SearchEngine(props) {
   }
 
   let form = (
-    <div className="formular" id="serach-form">
+    <div className="mx-auto formular" id="serach-form">
      <form onSubmit={handleSubmit}>
             <input type="text" placeholder="🔎 Search" onChange={updateCity} id="form-city-text"/>
             <input type="submit" value="Change city" className="form-city-button"/>

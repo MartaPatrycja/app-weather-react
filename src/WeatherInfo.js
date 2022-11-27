@@ -4,31 +4,28 @@ import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherInfo(props) {
   return (
-    <div className="card-city" id="city">
-      <h1>{props.info.name}</h1>
-      <ul className="row d-flex justify-content-between">
-        <li id="hour-top">
+    <div className="card-city mx-auto p-2" id="city">
+      <h1 className="mx-auto">{props.info.name}</h1>
+      <ul className="row d-flex justify-content-between mx-auto">
+        <li className="p-2 mx-auto" id="hour-top">
           <DateFormat day={props.info.date} />
-        </li>
-        <li className="text-capitalize"><h4>{props.info.description}</h4></li>
-      </ul>
+        </li> 
+        <li className="text-capitalize"><h4 className="p-2 mx-auto">{props.info.description}</h4></li>
+      </ul> 
 
-      <div className="row d-flex justify-content-between">
-          <div className="clearfix">
-            <WeatherIcon code={props.info.icon} size={100} />
-            <span className="ms-2" id="temperature">
-              {Math.round(props.info.temp)}
-              <span className="unit">°C</span>
-            </span>
-        </div>
-        <div className="d-flex justify-content-between">
-          <ul className="additional-parameters">
+         <ul className="d-flex justify-content-between">
+            <li className="mx-auto"><WeatherIcon code={props.info.icon} size={100} /></li>
+            <li className="d-flex justify-content-between mx-auto" id="temperature">
+              {Math.round(props.info.temp)}°C</li>
+          </ul>
+
+        <div className="d-flex justify-content-between mx-auto">
+          <ul className="additional-parameters mx-auto p-3">
             <li>Humidity: {props.info.humidity}%</li>
             <li>Wind: {Math.round(props.info.wind)} mph</li>
             <li>Pressure: {Math.round(props.info.grnd_level)} hPa</li>
           </ul>
         </div>
       </div>
-    </div>
   );
 }

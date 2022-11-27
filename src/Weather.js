@@ -41,23 +41,24 @@ export default function Weather(props) {
 
   if (weather.loaded) {
     return (
-      <div className="formular row d-flex justify-content-between">
+      <div className="formular row mx-auto pt-5">
         <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="🔎 Search"
             onChange={updateCity}
             id="form-city-text"
+            className="p-2"
           />
           <input
             type="submit"
             value="Change city"
-            className="form-city-button"
+            className="form-city-button p-2"
           />
           <input
             type="button"
             value="Current city"
-            className="current-city-button"
+            className="current-city-button p-2"
           />
         </form>
         <WeatherInfo info={weather} />
