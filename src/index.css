@@ -170,8 +170,12 @@ ul.additional-parameters {
     font-size: 15px;
   }
 
-  #city,
-  #country {
+  #city {
     font-size: 36px;
   }
+  
+  #temperature {
+    font-size: 66px;
+  }
+
 }
