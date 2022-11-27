@@ -6,7 +6,7 @@ export default function WeatherInfo(props) {
   return (
     <div className="card-city mx-auto p-2" id="city">
       <h1 className="mx-auto">{props.info.name}</h1>
-      <ul className="row d-flex">
+      <ul className="row d-flex justify-content-between mx-auto">
         <li className="p-2" id="hour-top">
           <DateFormat day={props.info.date} />
         </li> 
