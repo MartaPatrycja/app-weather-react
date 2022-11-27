@@ -13,9 +13,9 @@ export default function WeatherInfo(props) {
         <li className=""><h4 className="p-2 text-capitalize mx-auto">{props.info.description}</h4></li>
       </ul> 
 
-         <ul className="d-flex justify-content-between">
-            <li className="mx-auto"><WeatherIcon code={props.info.icon} size={100} /></li>
-            <li className="d-flex justify-content-between mx-auto" id="temperature">
+         <ul className="d-flex">
+            <li className="row mx-auto"><WeatherIcon code={props.info.icon} size={120} /></li>
+            <li className="row mx-auto" id="temperature">
               {Math.round(props.info.temp)}°C</li>
           </ul>
 
