@@ -47,6 +47,7 @@ export default function Weather(props) {
             type="text"
             placeholder="🔎 Enter a city"
             onChange={updateCity}
+            autoFocus="on"
             id="form-city-text"
             className="p-2"
           />
