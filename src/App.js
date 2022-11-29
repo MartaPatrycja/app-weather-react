@@ -8,7 +8,9 @@ export default function App() {
         <Weather defaultCity="Łódź" />
         <footer>
           <div className="github-link pt-4">
-            This project was coded by MartaPatrycja and is{" "}
+            This project was coded by <a href="https://darling-daifuku-5a3178.netlify.app/"
+              target="_blank"
+              rel="noreferrer"> MartaPatrycja</a> {" "}and is{" "}
             <a
               href="https://github.com/MartaPatrycja/app-weather-react"
               target="_blank"
