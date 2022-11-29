@@ -55,8 +55,15 @@ li {
 
 #temperature {
   color: var(--blue-color);
-  font-size: 96px;
+  font-size: 106px;
   text-align: center;
+}
+
+.units {
+  font-size: 36px;
+  font-weight: 600;
+  position: relative;
+  top: 26px;
 }
 
 .card-main {
