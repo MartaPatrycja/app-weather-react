@@ -65,6 +65,9 @@ li {
   position: relative;
   top: 26px;
 }
+.dash {
+  color: var(--accent-yellow);
+}
 
 .card-main {
   text-align: center;
@@ -182,7 +185,15 @@ ul.additional-parameters {
   }
   
   #temperature {
-    font-size: 66px;
+    font-size: 56px;
   }
 
+  .temperatures-daily,
+  .daily-temperature-min {
+  font-size: 15px;
+  }
+
+  #small-icon {
+    size: 10rem;
+  }
 }

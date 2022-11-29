@@ -18,7 +18,7 @@ export default function WeatherInfo(props) {
             <li className="mx-auto d-flex justify-content-between clearfix" id="temperature">
               <span>{Math.round(props.info.temp)}</span>
               <span className="units p-1">°C</span>
-              <span className="units">|</span>
+              <span className="units dash">|</span>
               <span className="units p-1">°F</span>
               </li>
           </ul>
