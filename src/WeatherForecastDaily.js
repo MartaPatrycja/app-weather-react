@@ -33,7 +33,7 @@ export default function WeatherForecast(props) {
             if (index < 5) {
               return (
                 <div className="col-2 d-flex justify-content-between mx-auto" key={index}>
-                  <Daily data={dailyForecast} />
+                  <strong><Daily data={dailyForecast} /></strong>
                 </div>
               );
             } else {
