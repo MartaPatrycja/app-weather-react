@@ -179,7 +179,6 @@ ul.additional-parameters {
 }
 
   #hour-top {
-    text-align: center;
     font-size: 15px;
   }
 
@@ -197,9 +196,5 @@ ul.additional-parameters {
   .temperatures-daily,
   .daily-temperature-min {
   font-size: 15px;
-  }
-
-  #small-icon {
-    size: 10rem;
   }
 }
