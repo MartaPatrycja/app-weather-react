@@ -1,5 +1,5 @@
 :root {
-  --turqoise-color: #1ab2a8;
+  --turqoise-color: turquoise;
   --blue-color: #006ec4;
   --accent-yellow: #ffbc0e;
 }
@@ -9,6 +9,10 @@ body {
   margin: 0 auto;
   max-width: 600px;
   text-align: center;
+}
+a {
+ text-decoration: none;
+ color: var(--turqoise-color);
 }
 
 .row {
@@ -43,7 +47,7 @@ li {
   text-align: center;
   color: turquoise;
   font-size: 20px;
-  border: 4px solid turquoise;
+  border: 4px solid var(--turqoise-color);
   font-weight: bolder;
 }
 
@@ -56,6 +60,8 @@ li {
 #temperature {
   color: var(--blue-color);
   font-size: 86px;
+  position: relative;
+  top: -10px;
 }
 
 .units {
@@ -69,11 +75,6 @@ li {
   color: var(--accent-yellow);
 }
 
-.card-main {
-  text-align: center;
-  background: var(--turqoise-color);
-}
-
 ul.changing-weather {
   background-color: var(--turqoise-color);
   color: var(--accent-yellow);
@@ -85,13 +86,9 @@ ul.changing-weather {
   column-count: 4;
 }
 
-.card-body-city {
-  background-color: var(--turqoise-color);
-}
-
 ul.additional-parameters {
   list-style: none;
-  border: 4px solid turquoise;
+  border: 4px solid var(--turqoise-color);
   color: var(--accent-yellow);
   font-size: 16px;
   font-weight: bolder;
@@ -99,19 +96,13 @@ ul.additional-parameters {
   column-count: 3;
 }
 
-.card-body-daily {
-  text-align: center;
-  background-color: turquoise;
-}
-
 .card-title-daily {
-  text-align: center;
   color: var(--blue-color);
 }
 
 .temperatures-daily {
   text-align: center;
-  color: turquoise;
+  color: var(--turqoise-color);
 }
 
 .daily-temperature-min {
@@ -153,8 +144,8 @@ ul.additional-parameters {
 .current-city-button {
   max-width: 600px;
   display: inline-block;
-  background-color: turquoise;
-  border: 4px solid turquoise;
+  background-color: var(--turqoise-color);
+  border: 4px solid var(--turqoise-color);
   color: white;
   text-align: center;
   font-size: 20px;
@@ -164,7 +155,7 @@ ul.additional-parameters {
   background-color: white;
   cursor: pointer;
   color: turquoise;
-  border: 4px solid turquoise;
+  border: 4px solid var(--turqoise-color);
   transition: all 200ms ease;
 }
 
