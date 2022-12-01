@@ -33,6 +33,7 @@ export default function Weather(props) {
   function handleSubmit(event) {
     event.preventDefault();
     search();
+
   }
 
   function updateCity(event) {

@@ -55,16 +55,18 @@ li {
 
 #temperature {
   color: var(--blue-color);
-  font-size: 106px;
+  font-size: 86px;
   text-align: center;
+  top: 10px;
 }
 
 .units {
   font-size: 36px;
   font-weight: 600;
   position: relative;
-  top: 26px;
+  top: 20px;
 }
+
 .dash {
   color: var(--accent-yellow);
 }
@@ -170,10 +172,11 @@ ul.additional-parameters {
 }
 
 @media (max-width: 567px) {
-  .container {
-    display: block;
-    margin: 0 auto;
-  }
+ 
+  #small-icon canvas {
+  width: 10px;
+  height: 10px;
+}
 
   #hour-top {
     text-align: center;
@@ -185,7 +188,10 @@ ul.additional-parameters {
   }
   
   #temperature {
-    font-size: 56px;
+    font-size: 76px;
+  }
+  .units {
+    top: 15px;
   }
 
   .temperatures-daily,

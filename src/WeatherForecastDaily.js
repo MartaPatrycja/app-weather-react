@@ -30,7 +30,7 @@ export default function WeatherForecast(props) {
       <div className="row d-flex justify-content-between mx-auto">
         <div className="row text-capitalize d-flex justify-content-between mx-auto">
           {forecast.map(function (dailyForecast, index) {
-            if (index < 6) {
+            if (index < 5) {
               return (
                 <div className="col-2 d-flex justify-content-between mx-auto" key={index}>
                   <Daily data={dailyForecast} />
