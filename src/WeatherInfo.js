@@ -14,9 +14,9 @@ export default function WeatherInfo(props) {
         <li className="p-2 text-capitalize" id="description">{props.info.description}</li>
       </ul> 
 
-         <ul className="d-flex pt-2">
+         <ul className="d-flex pt-1">
             <li className="mx-auto"><WeatherIcon code={props.info.icon} size={100} /></li>
-            <li><WeatherTemperature celsius={props.info.temperature} /></li>
+            <li className="mx-auto"><WeatherTemperature celsius={props.info.temp}/></li>
         </ul>
 
         <div className="d-flex justify-content-between mx-auto">

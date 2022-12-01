@@ -23,7 +23,8 @@ function showCelsius(event) {
    );
 
     } else {
-    let fahrenheit = (props.celsius * 9/5) + 32;
+    
+        let fahrenheit = (props.celsius * 9/5) + 32;
     <div className="mx-auto d-flex justify-content-between" id="temperature">
     <span>{Math.round(fahrenheit)}</span>
     <span className="units p-1"><a href="/" onClick={showCelsius}>°C</a></span>

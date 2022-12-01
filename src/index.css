@@ -56,8 +56,6 @@ li {
 #temperature {
   color: var(--blue-color);
   font-size: 86px;
-  text-align: center;
-  top: 10px;
 }
 
 .units {
