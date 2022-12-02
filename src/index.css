@@ -75,6 +75,10 @@ li {
   color: var(--accent-yellow);
 }
 
+.fahrenheit {
+color: var(--turqoise-color);
+}
+
 ul.changing-weather {
   background-color: var(--turqoise-color);
   color: var(--accent-yellow);
@@ -160,11 +164,6 @@ ul.additional-parameters {
 }
 
 @media (max-width: 567px) {
- 
-  #small-icon canvas {
-  width: 10px;
-  height: 10px;
-}
 
   #hour-top {
     font-size: 15px;
