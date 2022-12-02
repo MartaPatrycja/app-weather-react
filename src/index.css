@@ -166,7 +166,7 @@ ul.additional-parameters {
 @media (max-width: 567px) {
 
   #small-icon canvas {
-    width: 60%;
+    width: 100%;
   }
 
   #hour-top {
