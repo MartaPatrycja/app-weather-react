@@ -27,12 +27,12 @@ export default function WeatherForecast(props) {
 
   if (loaded) {
     return (
-      <div className="row mx-auto d-flex justify-content-between">
-        <div className="row text-capitalize mx-auto d-flex justify-content-between">
+      <div className="row mx-auto d-flex justify-content-center">
+        <div className="row text-capitalize">
           {forecast.map(function (dailyForecast, index) {
             if (index < 6) {
               return (
-                <div className="col-6 col-md-2 mx-auto d-flex justify-content-between p-2" key={index}>
+                <div className="col-6 col-md-2 mx-auto d-flex justify-content-center p-2" key={index}>
                   <strong><Daily data={dailyForecast} /></strong>
                 </div>
               );

@@ -42,7 +42,7 @@ export default function Weather(props) {
 
   if (weather.loaded) {
     return (
-      <div className="formular row mx-auto pt-5">
+      <div className="formular row mx-auto pt-2">
         <form onSubmit={handleSubmit}>
           <input
             type="text"

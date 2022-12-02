@@ -14,7 +14,7 @@ export default function WeatherTemperature(props) {
 
     if (unit === `celsius`) {
         return (
-            <div className="mx-auto d-flex justify-content-between" id="temperature">
+            <div className="mx-auto d-flex justify-content-center" id="temperature">
                 <span>{Math.round(props.celsius)}</span>
                 <span className="units p-1">°C</span>
                 <span className="units dash">|</span>
@@ -25,7 +25,7 @@ export default function WeatherTemperature(props) {
     } else {
 
         let fahrenheit = (props.celsius * 9 / 5) + 32;
-        return <div className="mx-auto d-flex justify-content-between" id="temperature">
+        return <div className="mx-auto d-flex justify-content-center" id="temperature">
             <span>{Math.round(fahrenheit)}</span>
             <span className="units p-1"><p onClick={showCelsius}>°C</p></span>
             <span className="units dash">|</span>

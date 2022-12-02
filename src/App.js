@@ -7,7 +7,7 @@ export default function App() {
       <div className="container">
         <Weather defaultCity="Łódź" />
         <footer>
-          <div className="github-link pt-4">
+          <div className="github-link pt-2">
             This project was coded by <a href="https://darling-daifuku-5a3178.netlify.app/"
               target="_blank"
               rel="noreferrer"> MartaPatrycja</a> {" "}and is{" "}

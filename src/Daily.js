@@ -19,12 +19,12 @@ export default function Daily(props) {
   }
   return (
     <div>
-      <div className="card-title-daily row d-flex justify-content-between mx-auto">{day()}</div>
-      <div className="row d-flex justify-content-between mx-auto" id="small-icon"><WeatherIcon code={props.data.weather[0].icon} size={60} /></div>
-      <div className="card-title-daily mx-auto">
-        <span className="temperatures-daily mx-auto">{maxTemperature()}</span>
+      <div className="card-title-daily">{day()}</div>
+      <div className="row" id="small-icon"><WeatherIcon code={props.data.weather[0].icon} size={60} /></div>
+      <div className="card-title-daily">
+        <span className="temperatures-daily">{maxTemperature()}</span>
         <span className="dash" > | </span>
-        <span className="daily-temperature-min mx-auto">{minTemperature()}</span>
+        <span className="daily-temperature-min">{minTemperature()}</span>
       </div>
     </div>
   );
