@@ -22,9 +22,9 @@ export default function Daily(props) {
       <div className="card-title-daily">{day()}</div>
       <div className="row" id="small-icon"><WeatherIcon code={props.data.weather[0].icon} size={60} /></div>
       <div className="card-title-daily">
-        <span className="temperatures-daily">{maxTemperature()}</span>
-        <span className="dash" > | </span>
-        <span className="daily-temperature-min">{minTemperature()}</span>
+        <span className="temperatures-daily">{maxTemperature()}C</span>
+        <span className="dash-small" > | </span>
+        <span className="daily-temperature-min">{minTemperature()}C</span>
       </div>
     </div>
   );
