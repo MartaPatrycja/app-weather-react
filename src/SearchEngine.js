@@ -33,8 +33,6 @@ export default function SearchEngine(props) {
      <form onSubmit={handleSubmit}>
             <input type="text" placeholder="🔎 Search" onChange={updateCity} id="form-city-text"/>
             <input type="submit" value="Change city" className="form-city-button"/>
-            <input type="button" value="Current city" className="current-city-button"
-                      id="current-city-button"/>
           </form>
     </div>
   );
