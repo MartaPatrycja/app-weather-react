@@ -29,7 +29,7 @@ export default function SearchEngine(props) {
   }
 
   function currentCity(event) {
-    setCity(event.city.value);
+    setCity(event.defaultCity.value);
   }
 
   let form = (
