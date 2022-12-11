@@ -28,12 +28,17 @@ export default function SearchEngine(props) {
     setCity(event.target.value);
   }
 
+  function currentCity(event) {
+    setCity(event.city.value);
+  }
+
   let form = (
     <div className="mx-auto formular" id="serach-form">
      <form onSubmit={handleSubmit}>
             <input type="text" placeholder="🔎 Search" onChange={updateCity} id="form-city-text"/>
             <input type="submit" value="Change city" className="form-city-button"/>
-        
+            <input type="button" value="Current city" onClick={currentCity} className="current-city-button"
+                      id="current-city-button"/>
           </form>
     </div>
   );

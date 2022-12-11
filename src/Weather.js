@@ -40,6 +40,10 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
+  function currentCity(event) {
+    setCity(event.city.value);
+  }
+
   if (weather.loaded) {
     return (
       <div className="formular row mx-auto pt-2">
@@ -59,6 +63,7 @@ export default function Weather(props) {
           />
           <input
             type="button"
+            onClick={currentCity}
             value="Current city"
             className="current-city-button p-2"
           />
