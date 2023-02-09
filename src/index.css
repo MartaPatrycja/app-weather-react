@@ -30,12 +30,10 @@ li {
 }
 
 #description {
-  margin: 0 auto;
-  display: block;
   text-align: center;
   font-size: 26px;
   font-weight: bolder;
-  max-width: 500px;
+  max-width: 515px;
   color: var(--accent-yellow);
   background-color: var(--blue-color);
 }
@@ -46,7 +44,7 @@ li {
 }
 
 #hour-top {
-  max-width: 500px;
+  max-width: 515px;
   text-align: center;
   color: turquoise;
   font-size: 20px;
