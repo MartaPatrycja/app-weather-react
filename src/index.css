@@ -30,6 +30,8 @@ li {
 }
 
 #description {
+  margin: 0 auto;
+  display: block;
   text-align: center;
   font-size: 26px;
   font-weight: bolder;
